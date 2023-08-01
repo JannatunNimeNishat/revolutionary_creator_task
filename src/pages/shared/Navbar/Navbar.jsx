@@ -73,7 +73,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar bg-base-100 my-container">
+            <div className="navbar  my-container ">
                 {/* <div className="navbar-start"> */}
                 <div className="">
                     <div className="dropdown">
