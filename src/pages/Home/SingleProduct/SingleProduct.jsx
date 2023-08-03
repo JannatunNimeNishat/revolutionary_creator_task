@@ -1,5 +1,6 @@
 import { Rating } from "@smastrom/react-rating";
 import { AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 
 const SingleProduct = ({ singleProductDetails }) => {
@@ -8,10 +9,12 @@ const SingleProduct = ({ singleProductDetails }) => {
     return (
         <div>
             {/* card1 */}
-            <div className="  h-[500px] flex flex-col  w-[300px]  relative ">
-                <figure className="h-[220px] ">
-                    <img className="h-full w-full border rounded-lg" src={image} alt="" />
-                </figure>
+            <div className="  h-[500px]   w-[300px]  relative ">
+                <Link>
+                    <figure className="h-[220px]  ">
+                        <img className="h-full w-full hover:h-[200px] hover:w-[96%] ease-in duration-100 border rounded-lg" src={image} alt="" />
+                    </figure>
+                </Link>
                 <div className="h-9 w-9 bg-slate-100 rounded-full flex items-center justify-center absolute top-4 right-4">
                     <AiOutlineHeart className="h-6 w-6 absolute " />
                 </div>
@@ -28,7 +31,7 @@ const SingleProduct = ({ singleProductDetails }) => {
                         <p>({sales})</p>
                     </div>
                     {/* <div className="border h-full w-full  my-auto"> */}
-                        <button className="border-2  px-4 py-[5px]  rounded-2xl font-semibold mt-3   hover:bg-green-900 hover:text-white hover:font-semibold ">Add to Cart</button>
+                    <button className="border-2  px-4 py-[5px]  rounded-2xl font-semibold mt-3   hover:bg-green-900 hover:text-white hover:font-semibold ">Add to Cart</button>
                     {/* </div> */}
                 </div>
             </div>

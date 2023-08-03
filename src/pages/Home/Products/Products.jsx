@@ -1,16 +1,12 @@
 
 import { useEffect, useState } from "react";
 import { IoIosOptions } from "react-icons/io";
-import { AiOutlineHeart } from "react-icons/ai";
-import { Rating } from '@smastrom/react-rating';
+
 import SingleProduct from "../SingleProduct/SingleProduct";
 
 const Products = () => {
 
     const [products, setProducts] = useState([]);
-
-
-
 
     const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY
     const RAPIDAPI_HOST = import.meta.env.VITE_RAPIDAPI_HOST
@@ -109,11 +105,6 @@ const Products = () => {
                 key={index}
                 singleProductDetails={singleProductDetails}
                 ></SingleProduct>)}
-
-
-
-                  
-
 
                 </div>
             </div>
