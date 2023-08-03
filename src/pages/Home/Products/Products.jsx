@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { IoIosOptions } from "react-icons/io";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Rating } from '@smastrom/react-rating';
+import SingleProduct from "../SingleProduct/SingleProduct";
 
 const Products = () => {
 
@@ -97,35 +98,23 @@ const Products = () => {
                     </div>
                 </div>
             </div>
-            {/* <button onClick={handleGetData} className="bg-green-500 px-5 py-2 rounded-md text-white font-bold">Get the data</button> */}
+            <button onClick={handleGetData} className="bg-green-500 px-5 py-2 rounded-md text-white font-bold">Get the data</button>
 
-            <div className="">
+            <div className="pb-12 ">
                 <h4 className="text-2xl font-bold py-8">Headphones For You!</h4>
                 {/* cards */}
-                <div>
-                    {/* card1 */}
-                    <div className="  h-[300px] w-[300px]  relative">
-                        <figure className="h-[200px] ">
-                            <img className="h-full w-full border rounded-lg" src={`http://ae01.alicdn.com/kf/H6c2f4124226845bc9307189ef49c41deT.jpg`} alt="" />
-                        </figure>
-                        <div className="h-9 w-9 bg-slate-100 rounded-full flex items-center justify-center absolute top-4 right-4">
-                            <AiOutlineHeart className="h-6 w-6 absolute " />
-                        </div>
-                        {/* card body */}
-                        <div className="mt-3 ">
+                <div className="grid grid-cols-4 gap-12">
+                
+                {products?.map((singleProductDetails,index) =><SingleProduct
+                key={index}
+                singleProductDetails={singleProductDetails}
+                ></SingleProduct>)}
 
-                            <div className="flex justify-between items-center ">
-                                <h3 className="text-xl font-bold">Wirless Earbuds, IPX8</h3>
-                                <p className="font-bold  pt-2"><sup className="font-bold">$</sup><span className="text-xl">89</span><sup className="font-bold">.00</sup> </p>
-                            </div>
-                            <p className=" pt-2 ">Organic cotton, fairtrader certidied</p>
-                            <div className="flex  pt-2">
-                                <Rating style={{ maxWidth: 100 }} value={4.5} readOnly />
-                                <p>(121)</p>
-                            </div>
-                            <button className="border border-black px-4 py-2  rounded-2xl font-semibold">Add to Cart</button>
-                        </div>
-                    </div>
+
+
+                  
+
+
                 </div>
             </div>
         </div>
