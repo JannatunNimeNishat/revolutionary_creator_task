@@ -10,7 +10,7 @@ const SingleProduct = ({ singleProductDetails }) => {
         <div>
             {/* card1 */}
             <div className="  h-[500px]   w-[300px]  relative ">
-                <Link>
+                <Link to={`/productDetails/${itemId}`}>
                     <figure className="h-[220px]  ">
                         <img className="h-full w-full hover:h-[200px] hover:w-[96%] ease-in duration-100 border rounded-lg" src={image} alt="" />
                     </figure>

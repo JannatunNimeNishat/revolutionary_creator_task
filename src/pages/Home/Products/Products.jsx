@@ -11,29 +11,40 @@ const Products = () => {
     const RAPIDAPI_KEY = import.meta.env.VITE_RAPIDAPI_KEY
     const RAPIDAPI_HOST = import.meta.env.VITE_RAPIDAPI_HOST
 
-    /*  useEffect(() => {
-         
- 
-     }, []) */
-    const url = `https://aliexpress-datahub.p.rapidapi.com/item_search?q=headphone&page=1`
-    const handleGetData = async () => {
-        try {
-            const res = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': RAPIDAPI_KEY,
-                    'X-RapidAPI-Host': RAPIDAPI_HOST,
-                }
+    useEffect(() => {
+        fetch(`https://aliexpress-datahub.p.rapidapi.com/item_search?q=headphone&page=1`, {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': RAPIDAPI_KEY,
+                'X-RapidAPI-Host': RAPIDAPI_HOST,
+            }
+        })
+            .then(res => res.json())
+            .then(data => setProducts(data.result.resultList))
+            .catch(error => {
+                console.log(error);
             })
-            const result = await res.json()
-            /*  console.log(result);
-             console.log(result.result.resultList); */
-            setProducts(result.result.resultList)
-        } catch (error) {
-            console.log(error);
-        }
-    }
-    console.log(products);
+
+    }, [])
+
+  /*   const url = `https://aliexpress-datahub.p.rapidapi.com/item_search?q=headphone&page=1`
+    const handleGetData = async () => {
+         try {
+             const res = await fetch(url, {
+                 method: 'GET',
+                 headers: {
+                     'X-RapidAPI-Key': RAPIDAPI_KEY,
+                     'X-RapidAPI-Host': RAPIDAPI_HOST,
+                 }
+             })
+             const result = await res.json()
+             
+             setProducts(result.result.resultList)
+         } catch (error) {
+             console.log(error);
+         }
+    } */
+    // console.log(products);
     return (
         <div className="my-container">
             <div className="py-5 lg:py-12 lg:flex justify-between">
@@ -94,17 +105,17 @@ const Products = () => {
                     </div>
                 </div>
             </div>
-            <button onClick={handleGetData} className="bg-green-500 px-5 py-2 rounded-md text-white font-bold">Get the data</button>
+           {/*  <button onClick={handleGetData} className="bg-green-500 px-5 py-2 rounded-md text-white font-bold">Get the data</button> */}
 
             <div className="pb-12 ">
                 <h4 className="text-2xl font-bold py-8">Headphones For You!</h4>
                 {/* cards */}
                 <div className="grid grid-cols-4 gap-12">
-                
-                {products?.map((singleProductDetails,index) =><SingleProduct
-                key={index}
-                singleProductDetails={singleProductDetails}
-                ></SingleProduct>)}
+
+                    {products?.map((singleProductDetails, index) => <SingleProduct
+                        key={index}
+                        singleProductDetails={singleProductDetails}
+                    ></SingleProduct>)}
 
                 </div>
             </div>

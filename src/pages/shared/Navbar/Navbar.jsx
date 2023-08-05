@@ -86,7 +86,7 @@ const Navbar = () => {
 
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl text-green-900 font-bold">Shopcart</a>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl text-green-900 font-bold">Shopcart</Link>
                 </div>
                 <div className=" hidden lg:flex lg:ml-5">
                     {/* <div className="navbar-center hidden lg:flex"> */}
